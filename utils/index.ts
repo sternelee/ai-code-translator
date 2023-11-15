@@ -90,7 +90,7 @@ export const OpenAIStream = async (
     },
     method: 'POST',
     body: JSON.stringify({
-      model,
+      model: `openai/${model}`,
       messages: [system],
       temperature: 0,
       stream: true,
