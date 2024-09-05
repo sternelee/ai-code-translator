@@ -82,9 +82,10 @@ export const OpenAIStream = async (
 
   const system = { role: 'system', content: prompt };
 
-  const res = await fetch(`https://api.openai.com/v1/chat/completions`, {
+  const res = await fetch(`https://openrouter.ai/api/v1/chat/completions`, {
     headers: {
       'Content-Type': 'application/json',
+      'HTTP-Referer': location.href,
       Authorization: `Bearer ${key || process.env.OPENAI_API_KEY}`,
     },
     method: 'POST',
